@@ -18,7 +18,7 @@
             header: 'Area',
             childs: [{
                 caption: 'Country',
-                route: '/country',
+                route: '/countries',
                 isActive: activeMenu == "country"
             },
             {

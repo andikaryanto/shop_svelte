@@ -16,8 +16,7 @@
 
 </script>
 
-<Container pageName="About" menuName="about">
-  <h1 class="text-3xl font-bold underline"> This is about page</h1>
+<Container pageName="Countries" menuName="country">
   {#if $countries.fetching}
   <p>Loading...</p>
   {:else if $countries.error}
