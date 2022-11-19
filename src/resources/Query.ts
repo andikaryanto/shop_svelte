@@ -14,24 +14,24 @@ class Query {
         
     }
 
-    setContext(){
+    protected setContext(){
         setContextClient(this.client);
         return this;
     }
 
-    queryName(): string {
+    protected queryName(): string {
         return '';
     }
 
-    build(){
+    protected build(){
     }
 
-    identity(): string {
+    protected identity(): string {
         return '';
     }
 
     
-    keys(): string{
+    protected keys(): string{
         return '';
     }
 
@@ -50,7 +50,7 @@ class Query {
         return this;
     }
 
-    getVariables() {
+    protected getVariables() {
         return this.variables;
     }
 

@@ -7,8 +7,8 @@ class QueryCollection extends Query {
         super();
     }
 
-    build(){
-        // this.setContext();
+    protected build(){
+        this.setContext();
         const identity = this.identity();
         const querName = this.queryName();
         const key = this.keys();
@@ -31,10 +31,10 @@ class QueryCollection extends Query {
         return gql(query);
     }
 
-    fetch(context: Client) {
+    fetch() {
         let query = this.build();
         return queryStore({
-            client: context,
+            client: getContextClient(),
             query,
             variables: this.getVariables()
         });

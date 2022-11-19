@@ -4,7 +4,7 @@
 	import Countries from "../../resources/Countries";
 
 
-  let query = Countries.setContext()
+  let countries = Countries
     .setIdentityParameters('($page: Int, $size: Int $search_value: String)')
     .setQueryParameters('(page: $page size: $size search_value: $search_value)')
     .setVariables({
@@ -12,22 +12,21 @@
       size: 5,
       search_value: ""
     })
-    .build();
-
-  const a = queryStore({
-        client: getContextClient(),
-        query,
-        variables: {
-          page: 1,
-          size: 5,
-          search_value: ""
-        }
-  });
-
-  console.log($a);
+    .fetch();
 
 </script>
 
 <Container pageName="About" menuName="about">
-    <h1 class="text-3xl font-bold underline"> This is about page</h1>
+  <h1 class="text-3xl font-bold underline"> This is about page</h1>
+  {#if $countries.fetching}
+  <p>Loading...</p>
+  {:else if $countries.error}
+  <p>Oh no... {$countries.error.message}</p>
+  {:else}
+  <ul>
+    {#each $countries.data.countries.resources as country}
+    <li>{country.name}</li>
+    {/each}
+  </ul>
+  {/if}
 </Container>
