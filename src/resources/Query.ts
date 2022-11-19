@@ -1,17 +1,22 @@
-import { createClient, setContextClient } from '@urql/svelte';
+import { Client, createClient, setContextClient } from '@urql/svelte';
 
 class Query {
     
     protected identityParams: string = '';
     protected queryParams: string = '';
     protected variables: any = {};
+    protected client: any;
 
     constructor(){
-        const client = createClient({
+        this.client = createClient({
             url: 'http://localhost:3000/graphql',
         });
         
-        setContextClient(client);
+    }
+
+    setContext(){
+        setContextClient(this.client);
+        return this;
     }
 
     queryName(): string {
@@ -49,7 +54,7 @@ class Query {
         return this.variables;
     }
 
-    fetch() {
+    fetch(context: Client) {
 
     }
 }
