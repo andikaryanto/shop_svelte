@@ -14,10 +14,7 @@ const config = {
 		preprocess({
 		  postcss: true,
 		}),
-	],
-	optimizeDeps: {
-		exclude: ['@urql/svelte'],
-	}
+	]
 };
 
 export default config;

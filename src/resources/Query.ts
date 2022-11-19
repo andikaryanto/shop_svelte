@@ -42,6 +42,7 @@ class Query {
 
     setVariables(variables: any) {
         this.variables = variables;
+        return this;
     }
 
     getVariables() {
