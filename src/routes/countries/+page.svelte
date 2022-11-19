@@ -5,15 +5,15 @@
 
   import {listPageStore} from  '../../stores/listPageStore';
 
-    $: countries = Countries
-      .setIdentityParameters('($page: Int, $size: Int $search_value: String)')
-      .setQueryParameters('(page: $page size: $size search_value: $search_value)')
-      .setVariables({
-        page: $listPageStore.page,
-        size: $listPageStore.size,
-        search_value: $listPageStore.search_value
-      })
-      .fetch();
+  $: countries = Countries
+    .setIdentityParameters('($page: Int, $size: Int $search_value: String)')
+    .setQueryParameters('(page: $page size: $size search_value: $search_value)')
+    .setVariables({
+      page: $listPageStore.page,
+      size: $listPageStore.size,
+      search_value: $listPageStore.search_value
+    })
+    .fetch();
   
 </script>
 
