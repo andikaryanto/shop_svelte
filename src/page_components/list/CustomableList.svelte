@@ -4,14 +4,13 @@
     import TableItem from "../../components/tables/TableItem.svelte";
     import List from "./List.svelte";
 
-    export let name: string = '';
     export let page: number;
     export let size: number;
     export let totalPage: number;
     export let totalRecord: number;
     export let isLoading: boolean = false;
     export let itemKeys: string[];
-    export let addRoute: string = '';
+    // export let addRoute: string = '';
     export let items: Array<any>
 </script>
 <List 

@@ -1,14 +1,14 @@
 
 
 <script lang="ts">
-	import Row from "../grids/Row.svelte";
+	import Column from "../grids/Column.svelte";
 
     export let numbered: boolean = false;
     export let headers: string[];
     
 </script>
 
-<Row className="overflow-x-auto">
+<Column className="overflow-x-auto">
     <table class="table table-zebra w-full">
         <thead class="text-primary">
             <tr>
@@ -24,4 +24,4 @@
         <slot/>
         </tbody>
     </table>
-</Row>
+</Column>

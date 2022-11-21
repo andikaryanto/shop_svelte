@@ -70,18 +70,18 @@
 
 </script>
 
-<Column className="pb-8 justify-between"> 
-    <Column>
-        <Row className="pr-4 content-center">
+<Row className="pb-8 justify-between"> 
+    <Row>
+        <Column className="pr-4 content-center">
             <SmallText>Rows per page </SmallText> 
-        </Row>
+        </Column>
         <InputSelect value={$listPageStore.size.toString()} onSelect={onSelectRowPerPage} items={selectItems} name="size"/>
-    </Column>
-    <Column>
+    </Row>
+    <Row>
         <InputText onChange={onChange} onInput={onInput} size="sm" className="input-sm" name="search" placeholder="Search" value={$listPageStore.search_value}/>
         <!-- {addComponent} -->
-    </Column>
-</Column>
+    </Row>
+</Row>
 <Table numbered={true} headers={itemKeys}>
     {#if isLoading }
      <div>loading</div>

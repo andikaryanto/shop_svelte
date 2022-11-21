@@ -2,6 +2,6 @@
     export let className = '';
 </script>
 
-<div class={'grid ' + className}>
+<div class={'flex ' + className}>
     <slot/>
  </div>
