@@ -1,5 +1,5 @@
 import Query from "./Query";
-import { gql, queryStore, getContextClient } from '@urql/svelte';
+import { gql, queryStore, getContextClient, Client } from '@urql/svelte';
 
 class QueryCollection extends Query {
 
@@ -7,8 +7,8 @@ class QueryCollection extends Query {
         super();
     }
 
-    build(){
-
+    protected build(){
+        this.setContext();
         const identity = this.identity();
         const querName = this.queryName();
         const key = this.keys();
@@ -32,9 +32,10 @@ class QueryCollection extends Query {
     }
 
     fetch() {
+        let query = this.build();
         return queryStore({
             client: getContextClient(),
-            query: this.build(),
+            query,
             variables: this.getVariables()
         });
     }

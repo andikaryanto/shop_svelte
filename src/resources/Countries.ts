@@ -5,15 +5,15 @@ class Countries extends QueryCollection {
         super();
     }
 
-    queryName(): string {
+    protected queryName(): string {
         return 'countries'
     }
 
-    identity(): string {
+    protected identity(): string {
         return 'getCountries'
     }
 
-    keys(): string {
+    protected keys(): string {
         return `resources {
             id
             name
