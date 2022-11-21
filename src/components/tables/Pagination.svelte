@@ -42,14 +42,14 @@
 </script>
 
 <Column className="w-full text-right mt-10 justify-between">
-        <Row className="content-center">
-            <SmallText>Showing {pageSize} of {totalRecord} Item(s) </SmallText>
-        </Row>
-        <div class={"btn-group " + btnSize}>
-            <button class={"btn " + btnSize} on:click={onFirstPage}>First</button>
-            <button class={"btn " + btnSize} on:click={onPrevPage}>«</button>
-            <button class={"btn " + btnSize + " btn-active"}>{currentPage}</button>
-            <button class={"btn " + btnSize} on:click={onNextPage}>»</button>
-            <button class={"btn " + btnSize} on:click={onLastPage}>Last</button>
-        </div>
-    </Column>
+    <Row className="content-center">
+        <SmallText>Showing {pageSize} of {totalRecord} Item(s) </SmallText>
+    </Row>
+    <div class={"btn-group " + btnSize}>
+        <button class={"btn " + btnSize} on:click={onFirstPage}>First</button>
+        <button class={"btn " + btnSize} on:click={onPrevPage}>«</button>
+        <button class={"btn " + btnSize + " btn-active"}>{currentPage}</button>
+        <button class={"btn " + btnSize} on:click={onNextPage}>»</button>
+        <button class={"btn " + btnSize} on:click={onLastPage}>Last</button>
+    </div>
+</Column>

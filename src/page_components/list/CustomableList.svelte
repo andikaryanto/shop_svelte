@@ -14,24 +14,21 @@
     export let addRoute: string = '';
     export let items: Array<any>
 </script>
-<List
-        name={name}
-        size={size} 
-        page={page} 
-        totalPage={totalPage} 
-        totalRecord={totalRecord} 
-        isLoading={isLoading} 
-        itemKeys={itemKeys} 
+<List 
+    totalPage={totalPage} 
+    totalRecord={totalRecord} 
+    isLoading={isLoading} 
+    itemKeys={itemKeys} 
 >
 {#if items.length > 0}
     {#each items as item, index(item)}
-        <TableItem>
-            <TableCell >{(page - 1) * size + 1 + index }</TableCell>
-            {#each itemKeys as key}
-                <TableCell >{item[key]}</TableCell>
-            
-            {/each}
-        </TableItem>
+    <TableItem>
+        <TableCell >{(page - 1) * size + 1 + index }</TableCell>
+        {#each itemKeys as key}
+            <TableCell >{item[key]}</TableCell>
+        
+        {/each}
+    </TableItem>
     {/each}
 {:else}
     <div>No Data</div>
