@@ -4,7 +4,7 @@
     export let href= "";
     // end props
 
-    let className = "flex gap-4";
+    let className = "flex gap-4 rounded-md";
     if(isActive) {
         className += " active";
     }
